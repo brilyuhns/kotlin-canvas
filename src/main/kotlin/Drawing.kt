@@ -3,15 +3,16 @@ class Drawing {
         val canvas = if(command == "C"){
             emptyCanvas(length, height)
         } else { arrayOf(arrayOf(" ")) }
-        return canvasToString(canvas, length)
+        return canvasToString(canvas)
     }
 
     fun emptyCanvas(length: Int, height: Int): Array<Array<String>> {
         return Array(height) { Array(length){ " " } }
     }
 
-    fun canvasToString(canvas: Array<Array<String>>, length: Int): String {
-        var x = horizontalBorderLine("-", length)
+    fun canvasToString(canvas: Array<Array<String>>): String {
+        val length = canvas.first().size
+        var x = horizontalBorderLine("-", canvas.first().size)
         for(row in canvas){
             x = x.plus("|" ).plus(row.joinToString("")).plus( "|\n")
         }
