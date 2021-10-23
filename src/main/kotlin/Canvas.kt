@@ -1,13 +1,20 @@
 class Canvas {
-    fun execute(s: String, length: Int, height: Int): String {
-        var x = verticalBorderLine("-", length)
-        x = x.plus(emptyCanvasLine("|", length).repeat(height))
-        x = x.plus(verticalBorderLine("-", length))
-//
+    fun execute(command: String, length: Int, height: Int):String {
+        val x = if(command == "C"){
+            emptyCanvas(length, height)
+        } else { "" }
         return x
-
     }
 
-    fun verticalBorderLine(char: String, length: Int):String = (char.repeat(length+2) + "\n")
-    fun emptyCanvasLine(char: String, length: Int):String = (char.plus(" ".repeat(length)).plus(char.plus("\n")))
+    fun emptyCanvas(length: Int, height: Int): String {
+        val arr = Array(height) { Array(length){ " " } }
+        var x = horizontalBorderLine("-", length)
+        for(row in arr){
+            x = x.plus("|" ).plus(row.joinToString("")).plus( "|\n")
+        }
+        x = x.plus(horizontalBorderLine("-", length))
+        return x
+    }
+
+    fun horizontalBorderLine(char: String, length: Int):String = (char.repeat(length+2) + "\n")
 }

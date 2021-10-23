@@ -6,13 +6,11 @@ class CanvasTest {
     @Test
     fun test4By2Canvas() {
         val ass = Canvas()
-        val result =  ass.execute("create_canvas", 4, 2 )
-        print(result)
+        val result =  ass.execute("C", 4, 2 )
         val expectedResult = "------\n" +
                 "|    |\n" +
                 "|    |\n" +
                 "------\n"
-        print(expectedResult)
         assertEquals(expectedResult, result)
     }
 
@@ -20,14 +18,12 @@ class CanvasTest {
     @Test
     fun test3by3Canvas() {
         val ass = Canvas()
-        val result =  ass.execute("create_canvas", 3, 3 )
-        print(result)
+        val result =  ass.execute("C", 3, 3 )
         val expectedResult = "-----\n" +
                 "|   |\n" +
                 "|   |\n" +
                 "|   |\n" +
                 "-----\n"
-        print(expectedResult)
         assertEquals(expectedResult, result)
     }
 }
