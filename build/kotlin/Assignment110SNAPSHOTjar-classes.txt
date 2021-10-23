@@ -1,1 +1,1 @@
-/Users/divya/IdeaProjects/Assignment1/build/classes/kotlin/main/Drawing.class:/Users/divya/IdeaProjects/Assignment1/build/classes/kotlin/main/MainKt.class
+/Users/divya/IdeaProjects/Assignment1/build/classes/kotlin/main/Canvas.class:/Users/divya/IdeaProjects/Assignment1/build/classes/kotlin/main/Drawing.class:/Users/divya/IdeaProjects/Assignment1/build/classes/kotlin/main/MainKt.class

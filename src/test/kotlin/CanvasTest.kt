@@ -1,11 +1,10 @@
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class DrawingTest {
+class CanvasTest {
     @Test
     fun test4By2Canvas() {
-        val ass = Drawing()
-        val result =  ass.execute("C", 4, 2 )
+        val result =  Canvas( 4, 2 ).convertToString()
         val expectedResult = "------\n" +
                 "|    |\n" +
                 "|    |\n" +
@@ -16,8 +15,7 @@ class DrawingTest {
 
     @Test
     fun test3by3Canvas() {
-        val ass = Drawing()
-        val result =  ass.execute("C", 3, 3 )
+        val result =  Canvas(3, 3 ).convertToString()
         val expectedResult = "-----\n" +
                 "|   |\n" +
                 "|   |\n" +
