@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CanvasTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-23T14:06:14" hostname="Divyas-MacBook-Pro.local" time="0.096">
-  <properties/>
-  <testcase name="test3by3Canvas" classname="CanvasTest" time="0.094"/>
-  <testcase name="test4By2Canvas" classname="CanvasTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

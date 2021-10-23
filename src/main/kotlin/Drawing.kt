@@ -1,4 +1,4 @@
-class Canvas {
+class Drawing {
     fun execute(command: String, length: Int, height: Int):String {
         val x = if(command == "C"){
             emptyCanvas(length, height)
