@@ -1,8 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CanvasTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-23T15:45:24" hostname="Divyas-MacBook-Pro.local" time="0.087">
+<testsuite name="CanvasTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-10-24T09:59:47" hostname="Divyas-MacBook-Pro.local" time="0.044">
   <properties/>
-  <testcase name="test3by3Canvas" classname="CanvasTest" time="0.086"/>
+  <testcase name="test3by3Canvas" classname="CanvasTest" time="0.036"/>
   <testcase name="test4By2Canvas" classname="CanvasTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="test2lines" classname="CanvasTest" time="0.005"/>
+  <testcase name="testVerticalLine" classname="CanvasTest" time="0.001"/>
+  <testcase name="testHorizontalLine" classname="CanvasTest" time="0.001"/>
+  <system-out><![CDATA[----------------------
+|                    |
+|                    |
+|                    |
+|                    |
+----------------------
+1,2,6,2
+same y co-ordinates
+----------------------
+|                    |
+|xxxxxx              |
+|                    |
+|                    |
+----------------------
+
+6,3,6,4
+----------------------
+|                    |
+|xxxxxx              |
+|     x              |
+|     x              |
+----------------------
+
+----------------------
+|                    |
+|                    |
+|                    |
+|                    |
+----------------------
+6,3,6,4
+----------------------
+|                    |
+|                    |
+|     x              |
+|     x              |
+----------------------
+
+----------------------
+|                    |
+|                    |
+|                    |
+|                    |
+----------------------
+1,2,6,2
+same y co-ordinates
+----------------------
+|                    |
+|xxxxxx              |
+|                    |
+|                    |
+----------------------
+
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
