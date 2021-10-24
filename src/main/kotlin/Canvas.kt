@@ -39,6 +39,22 @@ class Canvas(length: Int, height: Int){
         println(convertToString())
     }
 
+    // Example: canvas.addRectangle(14, 1, 18, 3);
+    fun addRectangle(x1: Int, y1: Int, x2: Int, y2: Int) {
+        // x1 = 14, y1 = 1, x2 = 18, y2 = 3
+
+        println("$x1,$y1,$x2,$y2")
+        println("start\n\n")
+
+        //horizontal lines
+        addLine(x1,y1,x2,y1) //14, 1, 18, 1
+        addLine(x1,y2,x2,y2) //14, 3, 18, 3
+
+        //vertical lines
+        addLine(x1,y1,x1,y2) //14, 1, 14, 3
+        addLine(x2,y1,x2,y2) //18, 1, 18, 3
+    }
+
     fun convertToString(): String {
         val length = contents.first().size
         var x = horizontalBorderLine("-", length)
