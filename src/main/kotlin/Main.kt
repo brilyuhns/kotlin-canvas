@@ -2,16 +2,73 @@ fun main() {
     printHelp()
     printInputPrompt()
     var input = readLine()
+    var canvas: Canvas? = null
     while(input != "Q"){
         println(input)
+        if (input != null) {
+            canvas = execute(canvas, input)
+            println("printing canvas")
+            println(canvas?.convertToString())
+        }
         printInputPrompt()
         input = readLine()
-
     }
 }
 
+fun execute(canvas: Canvas?, input: String): Canvas?{
+    val command = input.split(" ").first()
+    when (command) {
+        "C" -> {
+            return createCanvas(input)
+        }
+        "L" -> {
+            if(canvas != null) {
+                addLine(canvas, input)
+            } else {
+                println("Create a canvas first")
+            }
+            return canvas
+        }
+        "R" -> {
+            if(canvas != null) {
+                addRectangle(canvas, input)
+            } else {
+                println("Create a canvas first")
+            }
+            return canvas
+        }
+        else ->{
+            printUnknownInput()
+        }
+    }
+    return canvas
+}
+
+fun createCanvas(input: String): Canvas{
+    val args = input.split(" ")
+    return Canvas(args[1].toInt(), args[2].toInt())
+}
+
+fun addLine(canvas: Canvas, input: String){
+//    TODO("Check if the method can just accept an array")
+//    TODO("Consider validations")
+    val args = input.split(" ").takeLast(4).map { it.toInt() }
+    canvas.addLine(args[0], args[1], args[2], args[3])
+}
+
+fun addRectangle(canvas: Canvas, input: String){
+//    TODO("Check if the method can just accept an array")
+//    TODO("Consider validations")
+    val args = input.split(" ").takeLast(4).map { it.toInt() }
+    canvas.addRectangle(args[0], args[1], args[2], args[3])
+}
+
+fun printUnknownInput() {
+    println("Unknown input\n Press h for a list of commands")
+}
+
 fun printInputPrompt(){
-    println("Input your command. Press h for help")
+    println("\nInput your command")
 //    print("$")
 }
 fun printHelp(){

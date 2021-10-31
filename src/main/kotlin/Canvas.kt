@@ -36,7 +36,7 @@ class Canvas(length: Int, height: Int){
 //                println("checking $y against ${endY-1}")
             }
         }
-        println(convertToString())
+//        println(convertToString())
     }
 
     // Example: canvas.addRectangle(14, 1, 18, 3);
