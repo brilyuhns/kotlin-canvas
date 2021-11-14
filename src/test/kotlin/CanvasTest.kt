@@ -79,5 +79,22 @@ class CanvasTest {
                 "----------------------\n")
         assertEquals(expectedResult, canvas.convertToString())
     }
+
+    @Test
+    fun testFill() {
+        val canvas =  Canvas(20, 4 )
+        print(canvas.convertToString())
+        canvas.addRectangle(14, 1, 18, 3)
+        print(canvas.convertToString())
+        canvas.fill(10,3, "o")
+        print(canvas.convertToString())
+        val expectedResult = ("----------------------\n"+
+            "|oooooooooooooxxxxxoo|\n" +
+            "|ooooooooooooox   xoo|\n" +
+            "|oooooooooooooxxxxxoo|\n" +
+            "|oooooooooooooooooooo|\n" +
+            "----------------------\n")
+        assertEquals(expectedResult, canvas.convertToString())
+    }
 }
 

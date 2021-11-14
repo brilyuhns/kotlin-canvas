@@ -55,6 +55,37 @@ class Canvas(length: Int, height: Int){
         addLine(x2,y1,x2,y2) //18, 1, 18, 3
     }
 
+    // Todo("How to make C the default value for fill")
+    fun fill(x: Int, y: Int, char: String, indent: String = ""){
+        val inner_indent = indent.plus(">>")
+        contents[y][x] = char
+        println("------------------------------")
+        println("$indent Fill with x: $x, y: $y")
+        println("------------------------------")
+        println(convertToString())
+
+        println("checking x-1: ${x-1}")
+        if(x-1 >= 0 && contents[y][x - 1] == " ") {
+            fill(x-1, y, char, inner_indent)
+        }
+
+        println("checking y-1: ${y-1}")
+        if(y-1 >= 0 && contents[y-1][x] == " ") {
+            fill(x, y-1, char, inner_indent)
+        }
+
+        println("checking x+1: ${x+1}")
+        if(x+1 < contents.first().size && contents[y][x + 1] == " ") {
+            fill(x+1, y, char, inner_indent)
+        }
+
+        println("checking y+1: ${y+1}")
+        if(y+1 < contents.size && contents[y+1][x] == " ") {
+            fill(x, y+1, char, inner_indent)
+        }
+    }
+
+
     fun convertToString(): String {
         val length = contents.first().size
         var x = horizontalBorderLine("-", length)
@@ -64,6 +95,6 @@ class Canvas(length: Int, height: Int){
         x = x.plus(horizontalBorderLine("-", length))
         return x
     }
-    fun horizontalBorderLine(char: String, length: Int):String = (char.repeat(length+2) + "\n")
 
+    fun horizontalBorderLine(char: String, length: Int):String = (char.repeat(length+2) + "\n")
 }
