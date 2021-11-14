@@ -85,6 +85,23 @@ class Canvas(length: Int, height: Int){
         }
     }
 
+    fun fillBfs(x: Int, y: Int, char: String){
+        val queue = mutableListOf(Pair(x, y))
+        val x_limit = contents.first().size
+        val y_limit = contents.size
+        while (queue.isNotEmpty()) {
+            val it = queue.removeAt(0)
+            val x1 = it.first
+            val y1 = it.second
+            contents[y1][x1] = char
+            if((y1 + 1 < y_limit) && (contents[y1 + 1][x1] == " ")) { queue.add(Pair(x1, y1 + 1)) }
+            if((y1 - 1  >= 0) && (contents[y1 - 1][x1] == " ")) { queue.add(Pair(x1, y1 - 1)) }
+            if((x1 + 1 < x_limit) && (contents[y1][x1 + 1] == " ")) { queue.add(Pair(x1 + 1, y1)) }
+            if((x1 - 1  >= 0) && (contents[y1][x1 - 1] == " ")) { queue.add(Pair(x1 - 1, y1)) }
+        }
+        println(convertToString())
+    }
+
 
     fun convertToString(): String {
         val length = contents.first().size

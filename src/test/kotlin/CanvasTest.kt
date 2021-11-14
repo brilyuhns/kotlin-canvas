@@ -86,7 +86,7 @@ class CanvasTest {
         print(canvas.convertToString())
         canvas.addRectangle(14, 1, 18, 3)
         print(canvas.convertToString())
-        canvas.fill(10,3, "o")
+        canvas.fillBfs(10,3, "o")
         print(canvas.convertToString())
         val expectedResult = ("----------------------\n"+
             "|oooooooooooooxxxxxoo|\n" +
