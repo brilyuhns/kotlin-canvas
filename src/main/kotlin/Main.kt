@@ -37,7 +37,15 @@ fun execute(canvas: Canvas?, input: String): Canvas?{
             }
             return canvas
         }
-        else ->{
+        "B" -> {
+            if(canvas != null) {
+                fill(canvas, input)
+            } else {
+                println("Create a canvas first")
+            }
+            return canvas
+        }
+        else -> {
             printUnknownInput()
         }
     }
@@ -61,6 +69,13 @@ fun addRectangle(canvas: Canvas, input: String){
 //    TODO("Consider validations")
     val args = input.split(" ").takeLast(4).map { it.toInt() }
     canvas.addRectangle(args[0], args[1], args[2], args[3])
+}
+
+fun fill(canvas: Canvas, input: String){
+//    TODO("Check if the method can just accept an array")
+//    TODO("Consider validations")
+    val args = input.split(" ").takeLast(3)
+    canvas.fillBfs(args[0].toInt(), args[1].toInt(), args[2])
 }
 
 fun printUnknownInput() {
